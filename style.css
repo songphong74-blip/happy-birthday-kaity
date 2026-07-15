@@ -1,1 +1,399 @@
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#ffd6e7,#fff7f1);text-align:center}.hero{padding:60px}button{padding:14px 24px;border-radius:30px;border:0;background:#ff5c8a;color:#fff;font-size:18px;cursor:pointer}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:20px}img{width:100%;border-radius:18px;box-shadow:0 8px 20px #0003}.card{max-width:800px;margin:20px auto;padding:20px;background:#ffffffcc;border-radius:20px}.hide{display:none}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Segoe UI,Tahoma,sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#fff5f9);
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+/* Ẩn website lúc đầu */
+
+#main{
+    display:none;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* =======================
+        PHONG BÌ
+======================= */
+
+#intro{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.envelope{
+    width:340px;
+    height:240px;
+    position:relative;
+    cursor:pointer;
+}
+
+.cover{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#ff6fa3;
+    clip-path:polygon(0 0,100% 0,50% 55%);
+    transition:1s;
+    transform-origin:top;
+    z-index:5;
+}
+
+.letter{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:white;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    transition:1s;
+}
+
+.letter h1{
+    font-size:55px;
+}
+
+.letter h2{
+    color:#ff4d88;
+    margin:10px 0;
+}
+
+.letter p{
+    color:#666;
+    margin-bottom:20px;
+    font-size:22px;
+}
+
+button{
+
+    background:#ff4d88;
+    color:white;
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.open .cover{
+
+    transform:rotateX(180deg);
+
+}
+
+.open .letter{
+
+    transform:translateY(-130px);
+
+}
+
+/* =========================
+       WEBSITE
+========================= */
+
+.title{
+
+font-size:50px;
+
+color:#ff4d88;
+
+margin-bottom:30px;
+
+animation:pulse 2s infinite;
+
+}
+
+.slideshow{
+
+width:90%;
+
+max-width:700px;
+
+height:450px;
+
+margin:auto;
+
+border-radius:20px;
+
+overflow:hidden;
+
+position:relative;
+
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+}
+
+.slide{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+opacity:0;
+
+transition:1s;
+
+}
+
+.slide.active{
+
+opacity:1;
+
+}
+
+.message{
+
+margin:40px auto;
+
+width:90%;
+
+max-width:800px;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.1);
+
+}
+
+.message h2{
+
+color:#ff4d88;
+
+margin-bottom:20px;
+
+}
+
+.message p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#555;
+
+min-height:220px;
+
+}
+
+.cake{
+
+font-size:120px;
+
+margin-top:30px;
+
+animation:float 2s infinite;
+
+}
+
+/* =======================
+       TIM BAY
+======================= */
+
+.hearts{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-50px;
+
+font-size:25px;
+
+animation:heartUp linear forwards;
+
+}
+
+/* =======================
+       HOA RƠI
+======================= */
+
+.flowers{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.flower{
+
+position:absolute;
+
+top:-50px;
+
+font-size:20px;
+
+animation:flowerDown linear forwards;
+
+}
+
+/* =======================
+       PHÁO HOA
+======================= */
+
+#fireworks{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+}
+
+.spark{
+
+position:absolute;
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+animation:spark 1s forwards;
+
+}
+
+/* =======================
+       KEYFRAMES
+======================= */
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+}
+
+@keyframes float{
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+@keyframes heartUp{
+
+to{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes flowerDown{
+
+to{
+
+transform:translateY(120vh) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes spark{
+
+to{
+
+transform:translate(var(--x),var(--y));
+
+opacity:0;
+
+}
+}
+
+@media(max-width:768px){
+
+.title{
+
+font-size:34px;
+
+}
+
+.slideshow{
+
+height:300px;
+
+}
+
+.message p{
+
+font-size:18px;
+
+}
+
+}
