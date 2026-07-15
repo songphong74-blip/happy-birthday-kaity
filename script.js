@@ -1,0 +1,1 @@
+function start(){document.querySelector(".hero").style.display="none";document.getElementById("content").classList.remove("hide");try{document.getElementById("bg").play()}catch(e){}}
