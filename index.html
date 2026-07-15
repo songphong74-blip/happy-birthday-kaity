@@ -1,1 +1,119 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"><title>Happy Birthday Kaity</title></head><body><div class="hero"><h1>🎂 Happy Birthday<br>Kaity Đặng</h1><button onclick="start()">🎁 Mở món quà</button></div><audio id="bg" controls><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio><div id="content" class="hide"><div class="grid"><img src="assets/photo1.jpg"><img src="assets/photo2.jpg"><img src="assets/photo3.jpg"><img src="assets/photo4.jpg"><img src="assets/photo5.jpg"></div><div class="card"><h2>💌 Lời chúc</h2><p>Chúc mừng sinh nhật chị Kaity! Chúc chị luôn mạnh khỏe, hạnh phúc, rạng rỡ và gặp thật nhiều may mắn. Cảm ơn chị đã luôn là người chị dâu ấm áp và yêu thương gia đình. Chúc gia đình nhỏ của chị luôn tràn ngập tiếng cười, bình an và nhiều kỷ niệm đẹp. Happy Birthday! ❤️</p></div></div><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kaity</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9ec4,#ffd6e8);
+overflow-x:hidden;
+text-align:center;
+color:white;
+}
+
+h1{
+margin-top:30px;
+font-size:48px;
+animation:zoom 2s infinite alternate;
+}
+
+p{
+font-size:22px;
+max-width:800px;
+margin:20px auto;
+line-height:1.7;
+padding:0 20px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+audio{
+margin:30px auto;
+}
+
+.heart{
+position:fixed;
+top:-20px;
+color:#ff4d6d;
+animation:fall linear forwards;
+font-size:25px;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.08);}
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>🎂 Happy Birthday Chị Kaity 🎂</h1>
+
+<p>
+Chúc chị Kaity một tuổi mới thật nhiều sức khỏe, luôn xinh đẹp, hạnh phúc và gặp nhiều may mắn.
+Chúc mọi điều tốt đẹp nhất sẽ luôn đến với chị.
+Hy vọng mỗi ngày của chị đều tràn ngập tiếng cười, bình an và thật nhiều yêu thương.
+💖 Happy Birthday! 💖
+</p>
+
+<audio controls autoplay loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="gallery">
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+<img src="photo4.jpg">
+<img src="photo5.jpg">
+</div>
+
+<script>
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*3)+"s";
+heart.style.fontSize=(18+Math.random()*25)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},250);
+</script>
+
+</body>
+</html>
